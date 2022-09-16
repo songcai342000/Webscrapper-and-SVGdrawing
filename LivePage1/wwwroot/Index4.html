@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/googleapis-jquery-3.3.1-min.js"></script>
+    <script src="js/drawing.js"></script>
+    <link rel="stylesheet" href="style/DrawingStyle.css">
+    <title>House</title>
+</head>
+<body onload="loadTileLeft(), loadTileRight(), loadTileLeft2(), loadTileRight2()">
+    <svg>
+        <path id="plantbackleft" d="M0 350, 0 300, 1250,300, 1250, 350Z" fill="#4f6209" stroke="black" />
+        <path id="frontplen" d="M0 800, 1250,800, 1250, 350, 0, 350Z" fill="green" stroke="green" stroke-width="2px" />
+        <path id="leftplen" d="M0 650, 0,350, 235,350, 235,475Z" fill="green" stroke="green" stroke-width="2px" />
+        <path id="rightplen" d="M1250 650, 1050,500, 1050,350, 1250,350Z" fill="green" stroke="green" stroke-width="2px" />
+        <path id="sky" d="M0 350, 0 0, 1250 0, 1250,350Z" fill="skyblue" stroke="green" stroke-width="2px" />
+        <path id="earth" d="M0 650, 235,470, 1015,470, 1250,650Z" fill="#73746e" stroke="green" stroke-width="2px" />
+        <path id="leftstair" d="M200 585, 200,535, 150,585Z" fill="#989399" stroke="none" stroke-width="2px" />
+        <path id="rightstair" d="M1050 585, 1050,535, 1100,585Z" fill="#989399" stroke="none" stroke-width="2px" />
+        <path id="leftplantfront" d="M200 585, 200,545, 450,545, 450,585Z" fill="#5c9c21" stroke="none" stroke-width="2px" />
+        <path id="leftplanttop" d="M200 545, 200,535, 450,535, 450,545Z" fill="#538612" stroke="none" stroke-width="2px" />
+        <path id="rightplantfront" d="M800 585, 800,545, 1050,545, 1050,585Z" fill="#5c9c21" stroke="none" stroke-width="2px" />
+        <path id="rightplanttop" d="M800 545, 800,535, 1050,535, 1000,545Z" fill="#538612" stroke="none" stroke-width="2px" />
+        <path id="walleft" d="M235 535, 235 295, 500,295, 500, 535Z" fill="#62b0de" />
+        <path id="walleftshadow" d="M235 535, 235 295, 500,295, 500, 535Z" fill="url(#pattern-walllines)" />
+        <path id="leftwindowframe" d="M245 445, 245 295, 490,295, 490, 445Z" fill="white" />
+        <path id="leftwindow" d="M250 440, 250 300, 490,300, 490, 440Z" fill="white" />
+        <path id="wallright" d="M740 535, 740 295, 1015,295, 1015, 535Z" fill="#62b0de" />
+        <path id="wallrightshadow" d="M740 535, 740 295, 1015,295, 1015, 535Z" fill="url(#pattern-walllines)" />
+        <pattern id="pattern-walllines" x="0" y="0" width="249" height="5" patternUnits="userSpaceOnUse">
+            <path d="M0 0, 0 2, 249 2, 249 0Z" fill="#62b0de" stroke="#95a0a5" stroke-width="2px"></path>
+        </pattern>
+        <path id="stair1" d="M450 585, 450,570, 800,570 800,585Z" fill="#77583c" stroke="#5f4c3e" stroke-width="2px" />
+        <path id="stair2" d="M450 570, 455,555, 795,555, 800,570Z" fill="#77583c" stroke="#5f4c3e" stroke-width="2px" />
+        <path id="stair3" d="M450 555, 455,535, 795,535, 800,555Z" fill="#6c5939" stroke="#5f4c3e" stroke-width="2px" />
+        <path id="stair4" d="M470 535, 470,525, 775,525, 775,535Z" fill="#6c5939" stroke="#5f4c3e" stroke-width="2px" />
+        <path id="stair5" d="M465 525, 465,515, 775,515, 775,525Z" fill="#6c5939" stroke="#5f4c3e" stroke-width="2px" />
+        <path id="column1" d="M200 535, 200,295, 220,295, 220,535Z" fill="white" stroke="white" stroke-width="2px" />
+        <path id="column2" d="M450 535, 450,295, 470,295, 470,535Z" fill="white" stroke="white" stroke-width="2px" />
+        <path id="column3" d="M780 535, 780,295, 800,295, 800,535Z" fill="white" stroke="white" stroke-width="2px" />
+        <path id="column4" d="M1030 535, 1030,295, 1050,295, 1050,535Z" fill="white" stroke="white" stroke-width="2px" />
+
+        <path id="doorframe" d="M500 510, 500 315, 750,315, 750, 510Z" fill="#5d5e63" stroke="white" stroke-width="5px" />
+        <path id="doorwindow1" d="M505 505, 505 320, 562,320, 562, 505Z" fill="#5d5e63" stroke="white" stroke-width="5px" />
+        <path id="doorwindow2" d="M567 505, 567 320, 624,320, 624, 505Z" fill="#5d5e63" stroke="white" stroke-width="5px" />
+        <path id="doorwindow3" d="M629 505, 629 320, 686,320, 686, 505Z" fill="#5d5e63" stroke="white" stroke-width="5px" />
+        <path id="doorwindow4" d="M691 505, 691 320, 745,320, 745, 505Z" fill="#5d5e63" stroke="white" stroke-width="5px" />
+
+        <path id="leftstairtop" d="M200 545, 200,535, 450,535, 450,545Z" fill="#989399" stroke="none" stroke-width="2px" />
+        <path id="leftstairtop" d="M750 545, 750,535, 1000,535, 1000,545Z" fill="#989399" stroke="none" stroke-width="2px" />
+        <path id="fenchbottomleft" d="M220 535, 220,530, 450,530, 450,535Z" fill="#6c5939" stroke="none" stroke-width="2px" />
+        <path id="fenchbottomright" d="M750 535, 750,530, 980,530, 980,535Z" fill="#6c5939" stroke="none" stroke-width="2px" />
+        <path id="fenchleft1" d="M220 535, 220 475, 225,475, 225, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft2" d="M231 535, 231 475, 236,475, 236, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft3" d="M242 535, 242 475, 247,475, 247, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft4" d="M253 535, 253 475, 258,475, 258, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft5" d="M264 535, 264 475, 269,475, 269, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft6" d="M275 535, 275 475, 280,475, 280, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft7" d="M286 535, 286 475, 291,475, 291, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft8" d="M297 535, 297 475, 302,475, 302, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft9" d="M308 535, 308 475, 313,475, 313, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft10" d="M319 535, 319 475, 324,475, 324, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft11" d="M330 535, 330 475, 335,475, 335, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft12" d="M337 535, 337 475, 342,475, 342, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft13" d="M348 535, 348 475, 353,475, 353, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft14" d="M359 535, 359 475, 364,475, 364, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft15" d="M370 535, 370 475, 375,475, 375, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft16" d="M379 535, 379 475, 384,475, 384, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft17" d="M390 535, 390 475, 395,475, 395, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft18" d="M401 535, 401 475, 406,475, 406, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft19" d="M412 535, 412 475, 417,475, 417, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft20" d="M423 535, 423 475, 428,475, 428, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft21" d="M434 535, 434 475, 439,475, 439, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchleft22" d="M445 535, 445 475, 450,475, 450, 535Z" fill="white" stroke="none" stroke-width="2px" />
+
+        <path id="fenchright1" d="M800 535, 800 475, 805,475, 805, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright2" d="M811 535, 811 475, 816,475, 816, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright3" d="M822 535, 822 475, 827,475, 827, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright4" d="M833 535, 833 475, 838,475, 838, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright5" d="M844 535, 844 475, 849,475, 849, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright6" d="M855 535, 855 475, 860,475, 860, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright7" d="M866 535, 866 475, 871,475, 871, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright8" d="M877 535, 877 475, 882,475, 882, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright9" d="M888 535, 888 475, 893,475, 893, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright10" d="M899 535, 899 475, 904,475, 904, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright11" d="M910 535, 910 475, 915,475, 915, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright12" d="M917 535, 917 475, 922,475, 922, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright13" d="M928 535, 928 475, 933,475, 933, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright14" d="M939 535, 939 475, 944,475, 944, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright15" d="M950 535, 950 475, 955,475, 955, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright16" d="M961 535, 961 475, 966,475, 966, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright17" d="M972 535, 972 475, 977,475, 977, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright18" d="M983 535, 983 475, 988,475, 988, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright19" d="M994 535, 994 475, 999,475, 999, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright20" d="M1005 535, 1005 475, 1010,475, 1010, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright21" d="M1016 535, 1016 475, 1021,475, 1021, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="fenchright22" d="M1027 535, 1027 475, 1032,475, 1032, 535Z" fill="white" stroke="none" stroke-width="2px" />
+        <path id="roofbottom1" d="M180 315, 180 305, 1070,305, 1070, 315Z" fill="white" stroke="black" />
+        <path id="roofbottom2" d="M165 305, 165 295, 1085,295, 1085, 305Z" fill="white" stroke="black" />
+        <path id="roofunder" d="M165 295, 200 280, 1045,280, 1080, 295Z" fill="white" stroke="black" />
+        <path id="roofbottom3" d="M200 280, 200 270, 1050,270, 1050, 280Z" fill="white" stroke="black" />
+        <path id="roof" d="M200 270, 255,150, 995,150, 1050,270Z" fill="black" stroke="black" />
+    </svg>
+    <div id="roofupdiv"></div>
+    <div id="roofupbase">
+        <div class="roofedgeleft"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div class="rooedgeright"></div>
+    </div>
+    <div id="roofunderdiv"></div>
+    <div id="roofunderbase">
+        <div class="roofedgeleft"></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div class="rooedgeright"></div>
+    </div>
+    <div id="roofhousediv">
+        <svg>
+            <path id="roofhousefront" d="M520 255, 520 175, 625 130, 740 175, 740 255Z" fill="#62b0de" stroke="none" />
+            <path id="roofhousefront" d="M520 255, 520 175, 625 130, 740 175, 740 255Z" fill="url(#pattern-lines)" stroke="none" />
+            <path id="rhroofedgetop" d="M480 190, 480 180, 625 120, 780 180, 780 190, 625 130Z" fill="white" stroke="#e7e8ea" />
+            <path id="rhroofedgeleft" d="M510 255, 510 178, 520 173, 520 255Z" fill="white" stroke="#e7e8ea" />
+            <path id="rhroofedgeright" d="M740 255, 740 175, 750 180, 750 255Z" fill="white" stroke="#e7e8ea" />
+            <path id="rhrfleftblock" d="M480 190, 510 178, 510 195, 500 200Z" fill="white" stroke="#e7e8ea" />
+            <path id="rhrfrightblock" d="M750 195, 750 178, 780 190, 760 200Z" fill="white" stroke="none" />
+            <pattern id="pattern-lines" x="0" y="0" width="200" height="15" patternUnits="userSpaceOnUse">
+                <path d="M0 0, 0 10, 200 10, 200 0Z" fill="black" stroke="none"></path>
+            </pattern>
+        </svg>
+    </div>
+   
+
+</body>
+</html>

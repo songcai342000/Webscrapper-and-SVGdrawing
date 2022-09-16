@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\livearticles1 - Copy.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\livearticles1 - Copy.js" />
+    <None Include="wwwroot\js\livearticles1.js" />
+  </ItemGroup>
+
+
+</Project>

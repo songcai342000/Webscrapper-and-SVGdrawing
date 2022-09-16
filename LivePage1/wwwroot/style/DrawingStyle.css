@@ -1,0 +1,131 @@
+﻿body {
+}
+
+svg {
+    width: 100%;
+    height: 800px;
+}
+
+.walline {
+    stroke: black;
+    fill: none;
+    stroke-width: 10px;
+}
+
+.insidewalline {
+    stroke: black;
+    fill: none;
+    stroke-width: 7px;
+}
+
+.windowline {
+    stroke: yellow;
+    fill: none;
+    stroke-width: 10px;
+}
+
+.thickwalline {
+    stroke: grey;
+    fill: none;
+    stroke-width: 15px;
+}
+
+.stairline {
+    stroke: none;
+    fill: none;
+    stroke-width: 10px;
+}
+
+#roofunderdiv {
+    border-bottom: 17px solid black;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    height: 17px;
+    width: 850px;
+    position: absolute;
+    top: 270px;
+    left: 170px;
+}
+
+    #roofunderbase {
+        height: 17px;
+        width: 950px;
+        z-index: 1;
+        position: absolute;
+        top: 287px;
+        left: 186px;
+        display: flex;
+    }
+
+    #roofunderbase div {
+        border-radius: 0 10% 0 10%;
+        width: 15px;
+        height: 13px;
+        margin: 2px;
+        background-color: grey;
+        z-index: 1;
+    }
+
+    #roofupdiv {
+        border-bottom: 72px solid black;
+        border-left: 70px solid transparent;
+        border-right: 70px solid transparent;
+        height: 0;
+        width: 709px;
+        position: absolute;
+        top: 206px;
+        left: 208px;
+        display: flex;
+    }
+
+    #roofupbase {
+        height: 70px;
+        width: 869px;
+        z-index: 1;
+        position: absolute;
+        top: 156px;
+        left: 233px;
+        display: flex;
+    }
+
+    #roofupbase div {
+        border-radius: 0 10% 0 10%;
+        width: 13px;
+        height: 120px;
+        margin: 2px;
+        background-color: grey;
+        z-index: 1;
+    }
+
+    .roofedgeleft {
+        margin-left: 0;
+    }
+
+    .roofedgeright {
+        margin-right: 0;
+    }
+
+    #roofhousediv {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+#doorleftlinediv {
+    z-index: 1;
+    position: absolute;
+    top: 295px;
+    left: 235px;
+    width: 20%;
+    height: 25%;
+}
+
+    #doorleftlinediv svg {
+        background-color: #62b0de;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }

@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/googleapis-jquery-3.3.1-min.js"></script>
+    <script src="js/livearticles1.js"></script>
+    <title>Live Page</title>
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+
+        #topbane {
+            background-color: black;
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            left: 0;
+            top: 0;
+            border-collapse: collapse;
+            color: white;
+            z-index: 1;
+        }
+
+        #myArticles {
+            padding: 0 5% 5% 5%;
+        }
+
+        /*#newestArticles:nth-of-type(2) {
+            grid-gap: 50px;
+        }*/
+
+        #newestArticles {
+            background-color: white;
+            padding: 0 3% 3% 0;
+            overflow-y: scroll;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 20px;
+        }
+
+        .grid-item {
+            background-color: aliceblue;
+            text-align: center;
+            padding: 5%;
+        }
+
+            .grid-item:nth-child(2) {
+                background-color: aliceblue;
+                text-align: center;
+                padding: 5%;
+                margin-bottom: 50px;
+            }
+
+        .marksDiv {
+            text-align: right;
+            margin-bottom: 5%;
+            padding-right: 5%;
+        }
+
+        i {
+            font-size: 24px;
+        }
+
+        .fa-heart-o {
+            color: red;
+        }
+
+            .fa-heart-o:hover {
+                color: deeppink;
+                transform: scale(1.5);
+            }
+
+        .coverDiv {
+            z-index: 2;
+            width: 5%;
+            background-color: red;
+            height: 100%;
+            position: relative;
+            top: -15px;
+            left: -30%;
+            color: aliceblue;
+        }
+
+        .labelDiv {
+            margin-top: 5%;
+        }
+
+        #all {
+            border-bottom: solid 1px #e9eff4;
+            background-color: white;
+            height: 60%;
+            overflow-y: scroll;
+            padding: 0 3% 3% 3%;
+        }
+
+        #left, #myArticles {
+            background-color: white;
+            margin-top: 5%;
+            margin-bottom: 0;
+            border-radius: 4px;
+        }
+
+        #left {
+            width: 75%;
+            padding: 5% 5% 5%;
+            height: auto;
+            margin-bottom: 1%;
+        }
+
+        #myArticles {
+            width: 25%;
+            margin-left: 1%;
+            overflow-y: scroll;
+            height: auto;
+            margin-bottom: 1%;
+        }
+       
+        #myArticlesTable td, #allArticles td {
+            height: 20px;
+        }
+      
+        #newestArticles {
+            margin-top: 1%;
+            display: grid;
+            height: 30%;
+        }
+
+        #whole {
+            background-color: aliceblue;
+            font-size: 14px;
+            font-weight: 400;
+            display: flex;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 0px;
+        }
+
+        td {
+            height: 20px;
+        }
+
+        input[type=text] {
+            height: 40px;
+            width: 460px;
+            border-radius: 5px;
+        }
+
+        input[type=button] {
+            height: 35px;
+            width: 100px;
+            border-radius: 40px;
+            border: none;
+            background-color: aliceblue;
+        }
+
+        button {
+            height: 20px;
+            width: 20px;
+            border-color: #e9eff4;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            margin-left: 40px;
+        }
+
+            button:hover {
+                background-color: #345c9c;
+            }
+
+        input[type=button]:hover {
+            background-color: #345c9c;
+        }
+
+        /* unvisited link */
+
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* visited link */
+        a:visited {
+            color: #345c9c;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: deeppink;
+        }
+
+        /* selected link */
+        a:active {
+            color: blue;
+        }
+
+        img {
+            position: relative;
+            left: 45%;
+        }
+    </style>
+</head>
+<body onload="getAllArticles()">
+    <div id="topbane">
+        <img src="images/livepageearth-3.png" />
+        <div id="cookieDiv"></div>
+    </div>
+    <div id="whole">
+        <div id="left">
+            <div id="all">
+                <input type="text" placeholder="Type the website address..." id="webaddress" />
+                <input type="button" value="Submit" id="myArticleBtn" onclick="getMyArticles()" />
+                <p id="onlineNumber"></p>
+                <p id="article"></p>
+                <table id="myArticlesTable"></table>
+            </div>
+            <div style="font-size: 18px; font-weight: 600; margin-top: 20px;">New Articles</div>
+            <div id="newestArticles"></div>
+        </div>
+        <div id="myArticles">
+            <div style="font-size: 18px; font-weight: 600; margin-top: 20px;margin-bottom: 4%; text-align: center">All Articles</div>
+            <table id="allArticles"></table>
+        </div>
+
+    </div>
+    <script>
+        $(function () {
+            let text = "<div>test</div>";
+            $(".fa-envelope-o").tooltip({
+                content: "Recommand to a friend"
+            });
+            $(".fa-heart-o").tooltip({
+                content: "Mark as favorite"
+            });
+        }
+        );
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style/AnimationStyle.css">
+    <title>Song design</title>
+</head>
+<body>
+    <div class="circle1">Introduction</div>
+    <div class="circle2">Example</div>
+    <svg width="100%" height="100%" viewBox="30 -50 600 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+        <path id="path">
+            <animate attributeName="d" from="m0,110 h0" to="m0,110 h1100" dur="6.8s" begin="0s" fill="freeze" />
+        </path>
+        <text font-size="26" font-family="Montserrat" fill='hsla(36, 95%, 85%, 1)'>
+            <textPath xlink:href="#path">
+                A design of Song.
+            </textPath>
+        </text>
+    </svg>
+    <div class="diamond1"></div>
+    <div class="diamond2"></div>
+    <div class="scene">
+        <div class="cube">
+        <div class="cube_face cube_face_front">front</div>
+        <div class="cube_face cube_face_back">back</div>
+        <div class="cube_face cube_face_right">right</div>
+        <div class="cube_face cube_face_left">left</div>
+        <div class="cube_face cube_face_top">top</div>
+        <div class="cube_face cube_face_bottom">
+            bottom
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+
